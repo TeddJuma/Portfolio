@@ -49,7 +49,7 @@ The project consists of the following main files:
 
 The following pages are linked from the home page:
 
-- **Web Development Projects**: [web_dev.html](web-development.html)
+- **Web Development Projects**: [web_dev.html](web-dev.html)
 - **Game Development Projects**: [game-development.html](game-development.html)
 - **Data Science Projects**: [data-science.html](data-science.html)
 - **Utility Tools Projects**: [utility-tools.html](utility-tools.html)
