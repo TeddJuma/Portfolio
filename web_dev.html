@@ -1,30 +1,31 @@
 <html>
+
 <head>
   <base href="/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Development Projects - John Doe</title>
+  <title>Web Development Projects - Tedd Juma</title>
   <style>
     :root {
       /* Light mode colors */
-      --primary:#2d3748;
-      --secondary:#4a5568;
-      --accent:#63b3ed;
-      --bg-main:#fff;
-      --text-main:#1a202c;
-      --text-light:#718096;
+      --primary: #2d3748;
+      --secondary: #4a5568;
+      --accent: #63b3ed;
+      --bg-main: #fff;
+      --text-main: #1a202c;
+      --text-light: #718096;
       --card-bg: #f7f7f7;
       --form-border: #e2e8f0;
     }
 
     /* Dark mode colors */
     [data-theme="dark"] {
-      --primary:#90cdf4;
-      --secondary:#63b3ed;
-      --accent:#4299e1;
-      --bg-main:#1a202c;
-      --text-main:#f7fafc;
-      --text-light:#e2e8f0;
+      --primary: #90cdf4;
+      --secondary: #63b3ed;
+      --accent: #4299e1;
+      --bg-main: #1a202c;
+      --text-main: #f7fafc;
+      --text-light: #e2e8f0;
       --card-bg: #2d3748;
       --form-border: #4a5568;
     }
@@ -39,7 +40,343 @@
       margin-left: 2rem;
     }
 
-    .container{max-width:1200px;margin:0 auto;padding:0 1rem}*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:var(--text-main);background:var(--bg-main);transition: background-color 0.3s ease, color 0.3s ease;scroll-behavior: smooth;}header{background:var(--primary);color:#fff;padding:1rem 0;position:sticky;top:0;z-index:1000;transition: transform 0.3s ease}header.hidden{transform: translateY(-100%)}header .nav{display:flex;justify-content:space-between;align-items:center}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:#fff;text-decoration:none;transition:.3s ease;cursor:pointer}.nav-links a:hover{color:var(--accent)}.hero{min-height:70vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--card-bg) 0,var(--bg-main) 100%)}.hero-section{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem}.hero-content{flex:1;max-width:500px}.hero h1{font-size:3rem;margin-bottom:1rem}.hero p{font-size:1.2rem;color:var(--text-light)}.featured-project{flex:1;padding:2rem;margin:0;background:var(--card-bg);border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.05);transition: transform 0.3s ease, box-shadow 0.3s ease;}.featured-project:hover{transform: translateY(-10px);box-shadow: 0 6px 20px rgba(0,0,0,0.1);}.featured-project h3{color:var(--primary)}.tech-stack{display:flex;gap:1rem;margin:1rem 0;flex-wrap:wrap}.tech-badge{background:var(--primary);color:var(--bg-main);padding:.5rem 1rem;border-radius:20px;font-size:.9rem}.project-links{display:flex;gap:1rem;margin-top:1rem}.project-links a{text-decoration:none;color:var(--primary);border:2px solid var(--primary);padding:.5rem 1rem;border-radius:4px;transition:.3s ease}.project-links a:hover{background:var(--primary);color:var(--bg-main)}.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;padding:2rem 0}.project-category{background:var(--card-bg);border-radius:12px;padding:2rem;margin-bottom:2rem;transition:.3s ease;cursor:pointer;text-align:center}.project-category:hover{transform:translateY(-5px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}.project-category h3{color:var(--primary);margin-bottom:1rem}.project-category i{font-size:2.5rem;color:var(--primary);margin-bottom:1rem}.project-card{background:var(--card-bg);border-radius:8px;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,.1);transition:.3s ease}.project-card:hover{transform:translateY(-5px)}.project-card img{width:100%;height:200px;object-fit:cover}.project-card-content{padding:1.5rem}.contact-form{max-width:600px;margin:2rem auto}.form-group{margin-bottom:1rem}.form-group label{display:block;margin-bottom:.5rem;color:var(--text-light)}.form-group input,.form-group textarea{width:100%;padding:.75rem;border:1px solid var(--form-border);border-radius:4px;background: var(--bg-main);color: var(--text-main);}.form-group textarea{height:150px}.btn{background:var(--primary);color:var(--bg-main);padding:.75rem 1.5rem;border:none;border-radius:4px;cursor:pointer;transition:.3s ease}.btn:hover{background:var(--secondary)}.social-links{display:flex;gap:1rem;margin:2rem 0}.social-links a{color:var(--primary);font-size:1.5rem;transition:.3s ease}.social-links a:hover{color:var(--accent)}.about-section{display:flex;align-items:center;justify-content:space-between;padding:2rem 0;gap:4rem}.about-content{flex:1}.profile-image-container{flex:0 0 300px;height:400px;position:relative;overflow:hidden;border-radius:150px/200px;box-shadow:0 4px 6px rgba(0,0,0,0.1)}.profile-image{width:100%;height:100%;object-fit:cover}@media (max-width:768px){.nav-links{display:none}.hero h1{font-size:2rem}.hero p{font-size:1rem}.hero-section{flex-direction:column}.featured-project{margin-top:2rem}.about-section{flex-direction:column-reverse;text-align:center;gap:2rem}.profile-image-container{flex:0 0 250px;height:350px;margin:0 auto}.projects-grid{grid-template-columns:1fr}}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background: var(--bg-main);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: transform 0.3s ease
+    }
+
+    header.hidden {
+      transform: translateY(-100%)
+    }
+
+    header .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: .3s ease;
+      cursor: pointer
+    }
+
+    .nav-links a:hover {
+      color: var(--accent)
+    }
+
+    .nav-text {
+        display: inline;
+      }
+
+    .nav-text {
+    margin-left: 0.5rem;
+    /* Add space between icon and text */
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--card-bg) 0, var(--bg-main) 100%)
+    }
+
+    .hero-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 500px
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-light)
+    }
+
+    .featured-project {
+      flex: 1;
+      padding: 2rem;
+      margin: 0;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-project h3 {
+      color: var(--primary)
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap
+    }
+
+    .tech-badge {
+      background: var(--primary);
+      color: var(--bg-main);
+      padding: .5rem 1rem;
+      border-radius: 20px;
+      font-size: .9rem
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem
+    }
+
+    .project-links a {
+      text-decoration: none;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      transition: .3s ease
+    }
+
+    .project-links a:hover {
+      background: var(--primary);
+      color: var(--bg-main)
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0
+    }
+
+    .project-category {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: .3s ease;
+      cursor: pointer;
+      text-align: center
+    }
+
+    .project-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1)
+    }
+
+    .project-category h3 {
+      color: var(--primary);
+      margin-bottom: 1rem
+    }
+
+    .project-category i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+      transition: .3s ease
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px)
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover
+    }
+
+    .project-card-content {
+      padding: 1.5rem
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto
+    }
+
+    .form-group {
+      margin-bottom: 1rem
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: .5rem;
+      color: var(--text-light)
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: .75rem;
+      border: 1px solid var(--form-border);
+      border-radius: 4px;
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+
+    .form-group textarea {
+      height: 150px
+    }
+
+    .btn {
+      background: var(--primary);
+      color: var(--bg-main);
+      padding: .75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: .3s ease
+    }
+
+    .btn:hover {
+      background: var(--secondary)
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0
+    }
+
+    .social-links a {
+      color: var(--primary);
+      font-size: 1.5rem;
+      transition: .3s ease
+    }
+
+    .social-links a:hover {
+      color: var(--accent)
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
+      gap: 4rem
+    }
+
+    .about-content {
+      flex: 1
+    }
+
+    .profile-image-container {
+      flex: 0 0 300px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 150px/200px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    @media (max-width:768px) {
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        position: static;
+        background: none;
+        height: auto;
+        padding: 0;
+        transform: none;
+      }
+      .nav-text {
+        display: none
+      }
+
+      .hero h1 {
+        font-size: 2rem
+      }
+
+      .hero p {
+        font-size: 1rem
+      }
+
+      .hero-section {
+        flex-direction: column
+      }
+
+      .featured-project {
+        margin-top: 2rem
+      }
+
+      .about-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem
+      }
+
+      .profile-image-container {
+        flex: 0 0 250px;
+        height: 350px;
+        margin: 0 auto
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr
+      }
+    }
 
     .back-button {
       display: inline-flex;
@@ -66,13 +403,13 @@
       background: var(--card-bg);
       border-radius: 12px;
       padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: 0.3s ease;
     }
 
     .project-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .project-image {
@@ -120,7 +457,7 @@
       background: var(--card-bg);
       padding: 6rem 1.5rem 1.5rem;
       transition: 0.3s ease;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       z-index: 100;
       overflow-y: auto;
     }
@@ -152,11 +489,11 @@
       transition: 0.3s ease;
     }
 
-    .sidebar.open + .sidebar-toggle {
+    .sidebar.open+.sidebar-toggle {
       left: 300px;
     }
 
-    .sidebar.open + .sidebar-toggle i {
+    .sidebar.open+.sidebar-toggle i {
       transform: rotate(180deg);
     }
 
@@ -195,7 +532,7 @@
       .sidebar.open {
         left: 0;
       }
-      
+
       .main-content.shifted {
         margin-left: 0;
       }
@@ -203,18 +540,17 @@
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
   <header>
     <nav class="container nav">
       <div class="logo">John Doe</div>
       <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <button class="theme-toggle" id="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </button>
+        <li><a href="#home"><i class="fas fa-home"></i><span class="nav-text">Home</span></a></li>
+        <li><a href="#about"><i class="fas fa-user"></i><span class="nav-text">About</span></a></li>
+        <li><a href="#projects"><i class="fas fa-code"></i><span class="nav-text">Projects</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i><span class="nav-text">Contact</span></a></li>
+        <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
       </ul>
     </nav>
   </header>
@@ -239,36 +575,41 @@
   </button>
 
   <main class="container main-content">
-    <a href="index.html#projects" class="back-button">
+    <a href="home.html#projects" class="back-button">
       <i class="fas fa-arrow-left"></i>
-      Back to Categories
+      Back to Projects
     </a>
 
     <h1>Web Development Projects</h1>
-    
+
     <div class="projects-list">
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&amp;h=300" alt="E-commerce Website" class="project-image">
+        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=500&amp;h=300" alt="E-commerce Website"
+          class="project-image">
         <div class="project-meta">
-          <span class="project-date">June 2023</span>
-          <span class="project-status status-completed">Completed</span>
+          <span class="project-date">January 2025</span>
+          <span class="project-status status-ongoing">In Progress</span>
         </div>
-        <h3 id="ecommerce">E-commerce Platform</h3>
-        <p>A full-stack e-commerce solution with real-time inventory management and secure payment processing.</p>
+        <h3 id="ecommerce">TaskMaster: To-Do List Application</h3>
+        <p>Not just any other to-do list app, but a task management system that helps you organize your life and achieve your goals. 
+          <br>It's simple to use, but powerful enough to handle even the most complex projects. You can create lists, set deadlines, prioritize tasks, and track your progress. And with smart reminders, you'll never miss a beat.</p>
         <div class="tech-stack">
           <span class="tech-badge">React</span>
           <span class="tech-badge">Node.js</span>
           <span class="tech-badge">MongoDB</span>
           <span class="tech-badge">Stripe</span>
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/johndoe/ecommerce">View Code</a>
-          <a href="https://example-ecommerce.com">Live Demo</a>
+          <a href="https://tj-projects.netlify.app/to_do_list.html">View Code</a>
+          <a href="https://github.com/TeddJuma/Projects/blob/main/to_do_list.html">Live Demo</a>
         </div>
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=500&amp;h=300" alt="Blog Platform" class="project-image">
+        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=500&amp;h=300" alt="Blog Platform"
+          class="project-image">
         <div class="project-meta">
           <span class="project-date">August 2023</span>
           <span class="project-status status-ongoing">In Progress</span>
@@ -288,7 +629,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&amp;h=300" alt="Portfolio Generator" class="project-image">
+        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&amp;h=300" alt="Portfolio Generator"
+          class="project-image">
         <div class="project-meta">
           <span class="project-date">July 2023</span>
           <span class="project-status status-completed">Completed</span>
@@ -308,7 +650,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=500&amp;h=300" alt="Task Management App" class="project-image">
+        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=500&amp;h=300"
+          alt="Task Management App" class="project-image">
         <div class="project-meta">
           <span class="project-date">September 2023</span>
           <span class="project-status status-completed">Completed</span>
@@ -328,7 +671,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=500&amp;h=300" alt="Weather Dashboard" class="project-image">
+        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=500&amp;h=300" alt="Weather Dashboard"
+          class="project-image">
         <div class="project-meta">
           <span class="project-date">October 2023</span>
           <span class="project-status status-completed">Completed</span>
@@ -347,7 +691,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=500&amp;h=300" alt="Social Media Analytics" class="project-image">
+        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?w=500&amp;h=300"
+          alt="Social Media Analytics" class="project-image">
         <div class="project-meta">
           <span class="project-date">November 2023</span>
           <span class="project-status status-ongoing">In Progress</span>
@@ -367,7 +712,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&amp;h=300" alt="Code Review Platform" class="project-image">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&amp;h=300"
+          alt="Code Review Platform" class="project-image">
         <div class="project-meta">
           <span class="project-date">December 2023</span>
           <span class="project-status status-completed">Completed</span>
@@ -387,7 +733,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&amp;h=300" alt="Virtual Classroom" class="project-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&amp;h=300" alt="Virtual Classroom"
+          class="project-image">
         <div class="project-meta">
           <span class="project-date">January 2024</span>
           <span class="project-status status-ongoing">In Progress</span>
@@ -407,7 +754,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&amp;h=300" alt="Job Board Platform" class="project-image">
+        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&amp;h=300" alt="Job Board Platform"
+          class="project-image">
         <div class="project-meta">
           <span class="project-date">February 2024</span>
           <span class="project-status status-completed">Completed</span>
@@ -427,7 +775,8 @@
       </article>
 
       <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?w=500&amp;h=300" alt="Inventory Management" class="project-image">
+        <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?w=500&amp;h=300"
+          alt="Inventory Management" class="project-image">
         <div class="project-meta">
           <span class="project-date">March 2024</span>
           <span class="project-status status-completed">Completed</span>
@@ -449,69 +798,70 @@
   </main>
 
   <script>const themeToggleBtn = document.getElementById('theme-toggle');
-const themeToggleIcon = themeToggleBtn.querySelector('i');
-const currentTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', currentTheme);
-updateThemeToggleIcon(currentTheme);
-themeToggleBtn.addEventListener('click', function () {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateThemeToggleIcon(newTheme);
-});
-function updateThemeToggleIcon(theme) {
-  if (theme === 'dark') {
-    themeToggleIcon.classList.remove('fa-moon');
-    themeToggleIcon.classList.add('fa-sun');
-  } else {
-    themeToggleIcon.classList.remove('fa-sun');
-    themeToggleIcon.classList.add('fa-moon');
-  }
-}
-let lastScrollY = window.scrollY;
-let isAtTop = true;
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  const currentScrollY = window.scrollY;
-  if (currentScrollY === 0) {
-    header.classList.remove('hidden');
-    isAtTop = true;
-    lastScrollY = currentScrollY;
-    return;
-  }
-  if (!isAtTop) {
-    if (currentScrollY < lastScrollY) {
-      header.classList.remove('hidden');
-    } else {
-      header.classList.add('hidden');
+    const themeToggleIcon = themeToggleBtn.querySelector('i');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeToggleIcon(currentTheme);
+    themeToggleBtn.addEventListener('click', function () {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggleIcon(newTheme);
+    });
+    function updateThemeToggleIcon(theme) {
+      if (theme === 'dark') {
+        themeToggleIcon.classList.remove('fa-moon');
+        themeToggleIcon.classList.add('fa-sun');
+      } else {
+        themeToggleIcon.classList.remove('fa-sun');
+        themeToggleIcon.classList.add('fa-moon');
+      }
     }
-  }
-  isAtTop = false;
-  lastScrollY = currentScrollY;
-});
-const sidebarToggle = document.querySelector('.sidebar-toggle');
-const sidebar = document.querySelector('.sidebar');
-const mainContent = document.querySelector('.main-content');
-sidebarToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-  mainContent.classList.toggle('shifted');
-});
-document.querySelectorAll('.project-item').forEach((item, index) => {
-  const title = item.querySelector('h3').textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-  item.id = title;
-});
-document.querySelectorAll('.project-list-sidebar a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').slice(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
+    let lastScrollY = window.scrollY;
+    let isAtTop = true;
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      const currentScrollY = window.scrollY;
+      if (currentScrollY === 0) {
+        header.classList.remove('hidden');
+        isAtTop = true;
+        lastScrollY = currentScrollY;
+        return;
+      }
+      if (!isAtTop) {
+        if (currentScrollY < lastScrollY) {
+          header.classList.remove('hidden');
+        } else {
+          header.classList.add('hidden');
+        }
+      }
+      isAtTop = false;
+      lastScrollY = currentScrollY;
+    });
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      mainContent.classList.toggle('shifted');
+    });
+    document.querySelectorAll('.project-item').forEach((item, index) => {
+      const title = item.querySelector('h3').textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      item.id = title;
+    });
+    document.querySelectorAll('.project-list-sidebar a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
       });
-    }
-  });
-});</script>
+    });</script>
 </body>
+
 </html>
