@@ -61,12 +61,3 @@ The following pages are linked from the home page:
 Thank you for visiting my portfolio! Feel free to reach out if you have any questions or would like to collaborate.
 
 ---
-
-Explanation of Sections:
-Overview: A brief introduction to what the portfolio is about.
-Features: Highlights the key functionalities of the website.
-Project Structure: Lists the main files and their purposes.
-Technologies Used: Details the technologies employed in building the site.
-How to Run the Project: Instructions on how to clone and run the project locally.
-Links to Other Pages: Provides links to other associated webpages within the portfolio.
-License: Mentions licensing information.
