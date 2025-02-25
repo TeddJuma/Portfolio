@@ -25,19 +25,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add smooth scrolling to navigation links
+    // Handle navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault();
-
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 50,
-                    behavior: 'smooth'
-                });
+            if (targetId.startsWith('#')) {
+                // Handle internal scrolling
+                event.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 50,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Handle external navigation
+                // Do nothing here; the link will navigate normally
             }
         });
     });
