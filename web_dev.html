@@ -1,734 +1,143 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <base href="/">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Development Projects - Tedd Juma</title>
-  <style>
-    :root {
-      /* Light mode colors */
-      --primary: #2d3748;
-      --secondary: #4a5568;
-      --accent: #63b3ed;
-      --bg-main: #fff;
-      --text-main: #1a202c;
-      --text-light: #718096;
-      --card-bg: #f7f7f7;
-      --form-border: #e2e8f0;
-    }
-
-    /* Dark mode colors */
-    [data-theme="dark"] {
-      --primary: #90cdf4;
-      --secondary: #63b3ed;
-      --accent: #4299e1;
-      --bg-main: #1a202c;
-      --text-main: #f7fafc;
-      --text-light: #e2e8f0;
-      --card-bg: #2d3748;
-      --form-border: #4a5568;
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      color: #fff;
-      font-size: 1.2rem;
-      margin-left: 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      color: var(--text-main);
-      background: var(--bg-main);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: transform 0.3s ease
-    }
-
-    header.hidden {
-      transform: translateY(-100%)
-    }
-
-    header .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      transition: .3s ease;
-      cursor: pointer
-    }
-
-    .nav-links a:hover {
-      color: var(--accent)
-    }
-
-    .nav-text {
-        display: inline;
-      }
-
-    .nav-text {
-    margin-left: 0.5rem;
-    /* Add space between icon and text */
-    }
-
-    .hero {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, var(--card-bg) 0, var(--bg-main) 100%)
-    }
-
-    .hero-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 3rem
-    }
-
-    .hero-content {
-      flex: 1;
-      max-width: 500px
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: var(--text-light)
-    }
-
-    .featured-project {
-      flex: 1;
-      padding: 2rem;
-      margin: 0;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .featured-project:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .featured-project h3 {
-      color: var(--primary)
-    }
-
-    .tech-stack {
-      display: flex;
-      gap: 1rem;
-      margin: 1rem 0;
-      flex-wrap: wrap
-    }
-
-    .tech-badge {
-      background: var(--primary);
-      color: var(--bg-main);
-      padding: .5rem 1rem;
-      border-radius: 20px;
-      font-size: .9rem
-    }
-
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem
-    }
-
-    .project-links a {
-      text-decoration: none;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      padding: .5rem 1rem;
-      border-radius: 4px;
-      transition: .3s ease
-    }
-
-    .project-links a:hover {
-      background: var(--primary);
-      color: var(--bg-main)
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem 0
-    }
-
-    .project-category {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      transition: .3s ease;
-      cursor: pointer;
-      text-align: center
-    }
-
-    .project-category:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1)
-    }
-
-    .project-category h3 {
-      color: var(--primary);
-      margin-bottom: 1rem
-    }
-
-    .project-category i {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
-      transition: .3s ease
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px)
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover
-    }
-
-    .project-card-content {
-      padding: 1.5rem
-    }
-
-    .contact-form {
-      max-width: 600px;
-      margin: 2rem auto
-    }
-
-    .form-group {
-      margin-bottom: 1rem
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: .5rem;
-      color: var(--text-light)
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: .75rem;
-      border: 1px solid var(--form-border);
-      border-radius: 4px;
-      background: var(--bg-main);
-      color: var(--text-main);
-    }
-
-    .form-group textarea {
-      height: 150px
-    }
-
-    .btn {
-      background: var(--primary);
-      color: var(--bg-main);
-      padding: .75rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: .3s ease
-    }
-
-    .btn:hover {
-      background: var(--secondary)
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin: 2rem 0
-    }
-
-    .social-links a {
-      color: var(--primary);
-      font-size: 1.5rem;
-      transition: .3s ease
-    }
-
-    .social-links a:hover {
-      color: var(--accent)
-    }
-
-    .about-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 2rem 0;
-      gap: 4rem
-    }
-
-    .about-content {
-      flex: 1
-    }
-
-    .profile-image-container {
-      flex: 0 0 300px;
-      height: 400px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 150px/200px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
-    }
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover
-    }
-
-    @media (max-width:768px) {
-      .nav-links {
-        display: flex;
-        gap: 1rem;
-        position: static;
-        background: none;
-        height: auto;
-        padding: 0;
-        transform: none;
-      }
-      .nav-text {
-        display: none
-      }
-
-      .hero h1 {
-        font-size: 2rem
-      }
-
-      .hero p {
-        font-size: 1rem
-      }
-
-      .hero-section {
-        flex-direction: column
-      }
-
-      .featured-project {
-        margin-top: 2rem
-      }
-
-      .about-section {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 2rem
-      }
-
-      .profile-image-container {
-        flex: 0 0 250px;
-        height: 350px;
-        margin: 0 auto
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr
-      }
-    }
-
-    .back-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--primary);
-      text-decoration: none;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    .back-button:hover {
-      color: var(--accent);
-    }
-
-    .projects-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .project-item {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: 0.3s ease;
-    }
-
-    .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .project-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .project-date {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    .project-status {
-      background: var(--primary);
-      color: var(--bg-main);
-      padding: 0.25rem 0.75rem;
-      border-radius: 12px;
-      font-size: 0.8rem;
-    }
-
-    .status-completed {
-      background: #48bb78;
-    }
-
-    .status-ongoing {
-      background: #ed8936;
-    }
-
-    .sidebar {
-      position: fixed;
-      left: -300px;
-      top: 0;
-      width: 300px;
-      height: 100vh;
-      background: var(--card-bg);
-      padding: 6rem 1.5rem 1.5rem;
-      transition: 0.3s ease;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      z-index: 100;
-      overflow-y: auto;
-    }
-
-    .sidebar.open {
-      left: 0;
-    }
-
-    .sidebar-toggle {
-      position: fixed;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--primary);
-      color: var(--bg-main);
-      border: none;
-      padding: 0.5rem;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      z-index: 101;
-      transition: 0.3s ease;
-    }
-
-    .sidebar-toggle:hover {
-      background: var(--secondary);
-    }
-
-    .sidebar-toggle i {
-      transition: 0.3s ease;
-    }
-
-    .sidebar.open+.sidebar-toggle {
-      left: 300px;
-    }
-
-    .sidebar.open+.sidebar-toggle i {
-      transform: rotate(180deg);
-    }
-
-    .project-list-sidebar {
-      list-style: none;
-      padding: 0;
-    }
-
-    .project-list-sidebar li {
-      margin-bottom: 1rem;
-    }
-
-    .project-list-sidebar a {
-      color: var(--text-main);
-      text-decoration: none;
-      display: block;
-      padding: 0.5rem;
-      border-radius: 4px;
-      transition: 0.3s ease;
-    }
-
-    .project-list-sidebar a:hover {
-      background: var(--primary);
-      color: var(--bg-main);
-    }
-
-    .main-content {
-      transition: 0.3s ease;
-    }
-
-    .main-content.shifted {
-      margin-left: 300px;
-    }
-
-    @media (max-width: 768px) {
-      .sidebar.open {
-        left: 0;
-      }
-
-      .main-content.shifted {
-        margin-left: 0;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Projects - Tedd Juma</title>
+    <base href="/">
+    <link rel="stylesheet" href="Portfolio/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-  <header>
-    <nav class="container nav">
-      <div class="logo">John Doe</div>
-      <ul class="nav-links">
-        <li><a href="#home"><i class="fas fa-home"></i><span class="nav-text">Home</span></a></li>
-        <li><a href="#about"><i class="fas fa-user"></i><span class="nav-text">About</span></a></li>
-        <li><a href="#projects"><i class="fas fa-code"></i><span class="nav-text">Projects</span></a></li>
-        <li><a href="#contact"><i class="fas fa-envelope"></i><span class="nav-text">Contact</span></a></li>
-        <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav class="container nav">
+            <div class="logo">Tedd Juma</div>
+            <ul class="nav-links">
+                <li><a href="/home.html"><i class="fas fa-home"></i><span class="nav-text">Home</span></a></li>
+                <li><a href="/home.html#about"><i class="fas fa-user"></i><span class="nav-text">About</span></a></li>
+                <li><a href="/home.html#projects"><i class="fas fa-code"></i><span class="nav-text">Projects</span></a></li>
+                <li><a href="/home.html#contact"><i class="fas fa-envelope"></i><span class="nav-text">Contact</span></a></li>
+                <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
+            </ul>
+        </nav>
+    </header>
 
-  <aside class="sidebar">
-    <h2>Projects</h2>
-    <ul class="project-list-sidebar">
-      <li><a href="#todo">TaskMaster: To-Do List Application</a></li>
-      <li><a href="#weather_app">WeatherLens: Weather App</a></li>
-      <li><a href="#expense-tracker">Spend-Sense: Expense Tracking App</a></li>
-      <li><a href="#blog">Modern Blog Website</a></li>
-    </ul>
-  </aside>
-  <button class="sidebar-toggle">
-    <i class="fas fa-chevron-right"></i>
-  </button>
+    <aside class="sidebar">
+        <h2>Projects</h2>
+        <ul class="project-list-sidebar">
+            <li><a href="#todo">TaskMaster: To-Do List Application</a></li>
+            <li><a href="#weather_app">WeatherLens: Weather App</a></li>
+            <li><a href="#expense-tracker">Spend-Sense: Expense Tracking App</a></li>
+            <li><a href="#blog">Modern Blog Website</a></li>
+        </ul>
+    </aside>
+    <button class="sidebar-toggle">
+        <i class="fas fa-chevron-right"></i>
+    </button>
 
-  <main class="container main-content">
-    <a href="home.html#projects" class="back-button">
-      <i class="fas fa-arrow-left"></i>
-      Back to Projects
-    </a>
+    <main class="container main-content">
+        <a href="Portfolio/home.html#projects" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Projects
+        </a>
 
-    <h1>Web Development Projects</h1>
+        <h1>Web Development Projects</h1>
 
-    <div class="projects-list">
-      <article class="project-item">
-        <img src="https://plus.unsplash.com/premium_photo-1706259481452-f857c96ceaca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBsYW5uZXJ8ZW58MHx8MHx8fDA%3D" alt="E-commerce Website"
-          class="project-image">
-        <div class="project-meta">
-          <span class="project-date">January 2025</span>
-          <span class="project-status status-ongoing">In Progress</span>
-        </div>
-        <h3 id="todo">TaskMaster: To-Do List Application</h3>
-        <p>Not just any other to-do list app, but a task management system that helps you organize your life and achieve your goals. 
-          <br>It's simple to use, but powerful enough to handle even the most complex projects. You can create lists, set deadlines, prioritize tasks, and track your progress. And with smart reminders, you'll never miss a beat.</p>
-        <div class="tech-stack">
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">CSS</span>
-          <span class="tech-badge">JavaScript</span>
-        </div>
-        <div class="project-links"> 
-          <a href="https://github.com/TeddJuma/To_Do_List_App/blob/main/to-do-list.html">View Code</a>
-          <a href="https://prj-1.netlify.app/to-do-list.html">Live Demo</a>
-        </div>
-      </article>
+        <div class="projects-list">
+            <article class="project-item">
+                <img src="https://plus.unsplash.com/premium_photo-1706259481452-f857c96ceaca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBsYW5uZXJ8ZW58MHx8MHx8fDA%3D"
+                    alt="E-commerce Website" class="project-image">
+                <div class="project-meta">
+                    <span class="project-date">January 2025</span>
+                    <span class="project-status status-ongoing">In Progress</span>
+                </div>
+                <h3 id="todo">TaskMaster: To-Do List Application</h3>
+                <p>Not just any other to-do list app, but a task management system that helps you organize your life and
+                    achieve your goals.
+                    <br>It's simple to use, but powerful enough to handle even the most complex projects. You can create
+                    lists, set deadlines, prioritize tasks, and track your progress. And with smart reminders, you'll
+                    never miss a beat.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/TeddJuma/To_Do_List_App/blob/main/to-do-list.html">View Code</a>
+                    <a href="https://prj-1.netlify.app/to-do-list.html">Live Demo</a>
+                </div>
+            </article>
+            <article class="project-item">
+                <img src="https://images.unsplash.com/photo-1706696951930-6bc6258767b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjB3ZWF0aGVyJTIwaWNvbnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Blog Platform" class="project-image">
+                <div class="project-meta">
+                    <span class="project-date">January 2025</span>
+                    <span class="project-status status-ongoing">In Progress</span>
+                </div>
+                <h3 id="weather_app">WeatherLens: A web-based weather app.</h3>
+                <p>WeatherLens is a is a user-friendly web application that provides real-time weather updates and
+                    forecasts for locations around the globe. <br>
+                    By offering a simple interface and reliable data, WeatherLens enhances users' ability to stay
+                    prepared for changing weather patterns.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/TeddJuma/WeatherLens">View Code</a>
+                    <a href="https://prj-2.netlify.app/weather.html">Live Demo</a>
+                </div>
+            </article>
 
-      <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1706696951930-6bc6258767b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjB3ZWF0aGVyJTIwaWNvbnxlbnwwfHwwfHx8MA%3D%3D" alt="Blog Platform"
-          class="project-image">
-        <div class="project-meta">
-          <span class="project-date">January 2025</span>
-          <span class="project-status status-ongoing">In Progress</span>
-        </div>
-        <h3 id="weather_app">WeatherLens: A web-based weather app.</h3>
-        <p>WeatherLens is a is a user-friendly web application that provides real-time weather updates and forecasts for locations around the globe. <br> 
-          By offering a simple interface and reliable data, WeatherLens enhances users' ability to stay prepared for changing weather patterns.</p>
-        <div class="tech-stack">
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">CSS</span>
-          <span class="tech-badge">Tailwind CSS</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/TeddJuma/WeatherLens">View Code</a>
-          <a href="https://prj-2.netlify.app/weather.html">Live Demo</a>
-        </div>
-      </article>
+            <article class="project-item">
+                <img src="https://images.unsplash.com/photo-1728022873385-1b48bbc41ecc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TW9uZXklMjB3YWxsZXQlMjBjYWxjdWxhdG9yfGVufDB8fDB8fHww"
+                    alt="Portfolio Generator" class="project-image">
+                <div class="project-meta">
+                    <span class="project-date">January 2025</span>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <h3 id="expense-tracker">Spend-Sense: Expense Tracking App</h3>
+                <p>A simple web application designed to help users track their expenses across different categories
+                    and currencies.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">Chart.js</span>
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/TeddJuma/Expense-Tracker">View Code</a>
+                    <a href="https://codepen.io/tedd-juma/pen/gOgwqGz">Live Demo</a>
+                </div>
+            </article>
 
-      <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1728022873385-1b48bbc41ecc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TW9uZXklMjB3YWxsZXQlMjBjYWxjdWxhdG9yfGVufDB8fDB8fHww" alt="Portfolio Generator"
-          class="project-image">
-        <div class="project-meta">
-          <span class="project-date">January 2025</span>
-          <span class="project-status status-completed">Completed</span>
+            <article class="project-item">
+                <img src="https://images.unsplash.com/photo-1682687220793-d3955116a29e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Online Learning Platform" class="project-image">
+                <div class="project-meta">
+                    <span class="project-date">January 2025</span>
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <h3 id="blog">Modern Blog Website</h3>
+                <p>A platform designed to make content creation and management easy and intuitive.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Node.js</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/TeddJuma/Blog">View Code</a>
+                    <a href="https://calm-tundra-95444-2321b811e5bb.herokuapp.com/">Live Demo</a>
+                </div>
+            </article>
         </div>
-        <h3 id="expense-tracker">Spend-Sense: Expense Tracking App</h3>
-        <p>A simple web application designed to help users track their expenses across different categories and currencies.</p>
-        <div class="tech-stack">
-          <span class="tech-badge">Chart.js</span>
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">CSS</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">Frankfurter API</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/TeddJuma/Expense-Tracker">View Code</a>
-          <a href="https://prj-3.netlify.app/index.html">Live Demo</a>
-        </div>
-      </article>
-
-      <article class="project-item">
-        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmxvZ3xlbnwwfHwwfHx8MA%3D%3D" alt="E-commerce Website"
-          class="project-image">
-        <div class="project-meta">
-          <span class="project-date">January 2025</span>
-          <span class="project-status status-ongoing">In Progress</span>
-        </div>
-        <h3 id="blog">Modern Blog Website</h3>
-        <p>{Build currently in progress...}</p>
-        <div class="tech-stack">
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">CSS</span>
-          <span class="tech-badge">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/TeddJuma/Calculator/blob/main/calc.py">View Code</a>
-          <!-- <a href="https://github.com/TeddJuma/Calculator/calc.py">Live Demo</a> -->
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <script>const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeToggleIcon = themeToggleBtn.querySelector('i');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeToggleIcon(currentTheme);
-    themeToggleBtn.addEventListener('click', function () {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeToggleIcon(newTheme);
-    });
-    function updateThemeToggleIcon(theme) {
-      if (theme === 'dark') {
-        themeToggleIcon.classList.remove('fa-moon');
-        themeToggleIcon.classList.add('fa-sun');
-      } else {
-        themeToggleIcon.classList.remove('fa-sun');
-        themeToggleIcon.classList.add('fa-moon');
-      }
-    }
-    let lastScrollY = window.scrollY;
-    let isAtTop = true;
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      const currentScrollY = window.scrollY;
-      if (currentScrollY === 0) {
-        header.classList.remove('hidden');
-        isAtTop = true;
-        lastScrollY = currentScrollY;
-        return;
-      }
-      if (!isAtTop) {
-        if (currentScrollY < lastScrollY) {
-          header.classList.remove('hidden');
-        } else {
-          header.classList.add('hidden');
-        }
-      }
-      isAtTop = false;
-      lastScrollY = currentScrollY;
-    });
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.main-content');
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      mainContent.classList.toggle('shifted');
-    });
-    document.querySelectorAll('.project-item').forEach((item, index) => {
-      const title = item.querySelector('h3').textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      item.id = title;
-    });
-    document.querySelectorAll('.project-list-sidebar a').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').slice(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });</script>
+    </main>
+    <script src="Portfolio/app.js"></script>
 </body>
 
 </html>
