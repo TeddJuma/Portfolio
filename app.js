@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
     let lastScrollTop = 0;
 
-    // Function to set the theme based on localStorage
+    // Function to set the theme
     function setTheme(theme) {
         body.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
     }
+
+    // Set the default theme to dark
+    setTheme('dark');
 
     // Event listener for the theme toggle button
     themeToggle.addEventListener('click', function() {
@@ -71,14 +73,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Check for saved theme in localStorage on page load
-    let savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === null) {
-        // If there is nothing saved in localStorage, automatically set the theme to dark
-        setTheme('dark');
-    } else {
-        setTheme(savedTheme);
-    }
 });
