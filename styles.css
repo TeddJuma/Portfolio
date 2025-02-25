@@ -1,17 +1,17 @@
 :root {
     /* Light mode colors */
-    --primary: #2d3748;
-    --secondary: #4a5568;
-    --accent: #63b3ed;
-    --bg-main: #f9fafc;
-    --text-main: #1a202c;
-    --text-light: #718096;
-    --card-bg: #edf2f7;
-    --form-border: #e2e8f0;
-    --header-bg: rgba(255, 255, 255, 0.45); /* Increased transparency */
-    --link-blue: #3182ce;
-    --button-blue: #4299e1;
-    --toggle-icon-color: #718096;
+    --primary: #3e4c5f;       /* Slightly darker primary color */
+    --secondary: #62748c;     /* Slightly darker secondary color */
+    --accent: #74a7d6;        /* Slightly desaturated accent color */
+    --bg-main: #f2f3f5;       /* Even lighter gray background */
+    --text-main: #434a54;       /* Darker main text color */
+    --text-light: #79838f;       /* Darker light text color */
+    --card-bg: #e9ebed;       /* Lighter card background */
+    --form-border: #d1d5db;   /* Slightly darker form border */
+    --header-bg: rgba(245, 246, 247, 0.45); /* Slightly darker, more transparent header */
+    --link-blue: #4a86b8;      /* Desaturated link blue */
+    --button-blue: #5c96c9;     /* Desaturated button blue */
+    --toggle-icon-color: #79838f;  /* Darker toggle icon color */
 }
 
 /* Dark mode colors */
@@ -126,8 +126,7 @@ header .nav {
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 500px
+    flex: 1
 }
 
 .hero h1 {
@@ -347,7 +346,6 @@ header .nav {
         padding: 0;
         transform: none;
     }
-
     .nav-links a {
         font-size: 1.2rem;
     }
@@ -555,7 +553,6 @@ header .nav {
         padding: 0;
         transform: none;
     }
-
     .nav-links a {
         font-size: 1.2rem;
     }
